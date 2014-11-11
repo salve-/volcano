@@ -1,0 +1,197 @@
+\documentclass[12pt, a4paper]{article}
+\renewcommand{\baselinestretch}{1.3}
+\usepackage[dvips]{graphicx}
+%\usepackage{subfigure}
+%\usepackage{wrapfig}
+\usepackage{geometry}
+\geometry{verbose,a4paper,tmargin=25mm,bmargin=25mm,lmargin=30mm,rmargin=30mm}
+
+\renewcommand\refname{Bibliography}
+\usepackage[square]{natbib}
+\usepackage{natbibspacing}
+
+\setlength{\parindent}{0pt}
+\usepackage{parskip}
+% smaller margins:
+%\usepackage{fullpage}
+% smaller font in captions:
+%\newcommand{\captionfonts}{\footnotesize}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+
+%\usepackage{german}
+\usepackage{eurosym}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{etaremune}
+\usepackage{multicol}
+\usepackage{setspace}
+
+\usepackage[usenames,dvipsnames]{color}
+% create color commands
+\newcommand{\unsure}[1]{ {\color{Gray} #1} }
+\newcommand{\changed}[1]{ {\color{red} #1} }
+\newcommand{\mine}[1]{ {\color{blue} #1} }
+%\newcommand{\todo}[1]{ {\color{green} #1} }
+%\newcommand{\unsure}[1]{ {\gray{ #1} }}
+
+%\usepackage{todonotes}
+%\newcommand{\insertref}[1]{\todo[color=green!40]{#1}}
+%\newcommand{\explainindetail}[1]{\todo[color=red!40]{#1}}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% boxes
+\setlength{\fboxsep}{4mm}
+%\usepackage{tikz}
+%\tikz \node[rectangle, draw=red, thick] {asdf};
+
+
+\title{DFG Proposal - State of the Art}
+\author{Dr. Joachim Wassermann, Johannes Salvermoser}
+\date{}
+
+
+
+\begin{document}
+
+
+\maketitle
+
+%\begin{center}
+%{\Large Waveform Compare}
+%\end{center}
+
+%\thispagestyle{empty}
+
+\section*{Objectives}
+
+In order to assess seismic hazard and the different types of volcanic hazards, it is crucial to have a profound knowledge about source mechanisms. Seismic signals, the recordings of ground displacement, -velocity and -acceleration of different spatial directions yield the most promising results for investigations of physical processes inside volcanoes.\\
+More precisely, we are able to identify seismic signals that accompany volcanic eruptions. Nevertheless, to date it is not possible to accurately predict eruptions, neither in exact timing, place nor volume of erupted material. For intensively investigated volcanoes (e.g. Etna, Merapi, Piton de la Fournaise, etc.), due to recent technical effort and expertise, we can at least roughly estimate timing and eruption styles via seismological methods. However, the important question wether a volcanic surface eruption is immanent or the activity is reflecting an intrusion which may act as a future source of volcanic activity is unanswered, as the question about the erupted volume is. Our goal is to shed light on the physical processes going along with different seismo-volcanic signals to better understand the link between source mechanisms (derived from observed signals) and eruption styles.\\
+
+Source mechanisms of long period events and very long period events on volcanoes were investigated by several autors (e.g. \citep{Ohminato1998,Chouet2003,Cesca2008,Cannata2009, DeBarros2011}), as they often offer insights into the dynamics of the fluid flow in the volcanic feeder system and thus let us determine the upcoming eruption style. The important tool for determination of source mechanisms is moment tensor inversion from seismometer recordings. The moment tensor of a seismic signal is the mathematical description of the processes in the source region and can be obtained by processing recordings of (large) seismometer arrays.\\
+In terms of shallow-surface velocity models the most prominent and established methods are the horizontal-to-vertical spectral ratio (\textbf{HVSR}) ???? and the spatial autocorrelation (\textbf{SPAC}) method.\\
+
+The SPAC method was first described by \citet{Aki1957} and an accurate review can be found in \citet{Chavez2005}: the specific measurement setup and processing allows to determine phase velocities using the records of ambient vibrations (e.g. microtremor). The seismometers are arranged such that they form a spatial filter for the signal, i.e. they are put at constant distances forming pairs along different azimuths. Usually, circular arrays with a sensor in the center (cf. \citet{Aki1965}) are used to measure phase velocities of wave fields crossing it. By averaging over several of these circular arrays, one can estimate azimuthal averages of the spatial auto-correlation for a fixed inter-receiver distance. This is used to infer shear-velocity profiles under the array.\\
+Obviously, this array method requires a large number of instruments which makes it less attractive for monitoring badly accessible areas like volcanoes. Nevertheless, SPAC certainly yields the most accurate shear-velocity models of the subsurface.\\
+
+
+Advantages ensue from investigating rotational ground motions. \citet{Igel2005} proposed a method to derive shallow surface-wave velocity models from the ratio of vertical rotation rate $\dot{\Omega}_z$ and transversal acceleration $a_\tau$:
+\begin{equation}
+	v_{ph} = \frac{1}{2} \cdot \frac{a_\tau}{\dot{\Omega}_z}
+\end{equation}
+If we use portable 6-component stations in the field, it should be possible to gain shallow 1D velocity models from point measurements. These can be performed subsequently, thus with one 6C-sensor we are able to estimate 2D velocity models from local microseismicity on a volcano.\\
+
+A well-defined velocity model yields the opportunity to reduce the non-uniqueness of source mechanisms from MTI without being dependent on using large seismometer arrays. Moreover as explained above, we simultaneously solve the problem of SRC by employing rotational measurements.\\
+We want to test if we can put constraints on the source mechanisms by that and will relate the measured data to the theoretically possible source mechanisms.
+%\section*{Moment Tensor Inversion: a short introduction}
+%$\cdots$ I'd like to go a bit into detail about the techniques, but don't really know how much is required and where to get a good %overview from as I actually didn't work with it myself $\cdots$ 
+
+\section*{Problems with MTI}
+Various authors dealt with source inversion at active volcanoes. Due to different parameters, especially data deficiency (poor instrument coverage), unknown or simplified velocity models, near field observation and the associated very local effect of strain-rotation coupling (SRC), we are confronted with non-uniqueness in our moment tensor inversions. That means, different source mechanisms are found that could explain the same observations, which makes it hard or even impossible to determine the true solution.\\
+The problem associated with every source inversion, processed with real seismic data, is to find a proper velocity model of the subsurface. Velocity models are the fundamental sources of ambiguity in most studies as they are hard to determine from seismic signals only. Often borehole measurements could improve the models by yielding additional geological information, but these measurements are expensive, consume vast amounts of energy and require large machinery. Moreover in volcanic regions, temperature gradients of the subsurface are generally too high to allow for sufficiently deep drilling.
+\subsection*{Velocity models}
+In terms of shallow-surface velocity models, the most prominent and established methods are the horizontal-to-vertical spectral ratio (\textbf{HVSR}) and the spatial autocorrelation (\textbf{SPAC}) method.\\
+The SPAC method was first described by \citet{Aki1957} and an accurate review can be found in \citet{Chavez2005}: the specific measurement setup and processing allows to determine phase velocities using the records of ambient vibrations (e.g. microtremor). The seismometers are arranged such that they form a spatial filter for the signal, i.e. they are put at constant distances forming pairs along different azimuths. Usually, circular arrays with a sensor in the center (cf. \citet{Aki1965}) are used to measure phase velocities of wave fields crossing it. By averaging over several of these circular arrays, one can estimate azimuthal averages of the spatial auto-correlation for a fixed inter-receiver distance. This is used to infer shear-velocity profiles under the array.\\
+Obviously, this array method requires a large number of instruments which makes it less attractive for monitoring badly accessible areas like volcanoes. Nevertheless, SPAC certainly yields the most accurate shear-velocity models of the subsurface.\\
+
+Here goes HVSR\\
+
+Advantages ensue from investigating rotational ground motions. \citet{Igel2005} proposed a method to determine surface-wave phase velocities from the ratio of vertical rotation rate $\dot{\Omega}_z$ and transversal acceleration $a_\tau$:
+\begin{equation}
+	v_{ph} = \frac{1}{2} \cdot \frac{a_\tau}{\dot{\Omega}_z}
+\end{equation}
+As a part of a Master's thesis \citet{Wietek2013} used this principle to derive shallow-subsurface velocity profiles by the evaluation of dispersion curves, obtained from processing the Love-wave fraction of ambient seismic noise. They related seismometer recordings to rotational data retrieved from array derived rotations (ADR). ADR was 
+If we use portable 6-component stations in the field, it should be possible to gain shallow 1D velocity models from point measurements. These can be performed subsequently, thus with one 6C-sensor we are able to estimate 2D velocity models from local microseismicity on a volcano.\\
+
+A well-defined velocity model yields the opportunity to reduce the non-uniqueness of source mechanisms from MTI without being dependent on using large seismometer arrays. Moreover as explained above, we simultaneously solve the problem of SRC by employing rotational measurements.\\
+We want to test if we can put constraints on the source mechanisms by that and will relate the measured data to the theoretically possible source mechanisms.
+
+
+\subsection*{Strain-rotation coupling}
+Strain-rotation coupling is an effect that acts in a local scale, i.e. large scale strain is converted to small scale rotational motions. Under the condition of linear elasticity and small strain values, the effect can be approximated as linear \citep{vanDriel2012}. After \citet{Harrison1976} the associated, dimensionless coupling constants are defined as:
+\begin{equation}
+	c_{ij} = \frac{\omega_j}{\epsilon_i} = \frac{strain-induced rotation around j-axis}{strain component i}
+\end{equation} 
+Typically, SRC is caused by inhomogeneities in the subsurface which are especially common at volcanic environments. \citet{vanDriel2012} conducted finite element simulations related to small scale inhomogeneities in order to determine coupling constants for different random ground models but also for practical 3D examples.\\
+Important findings of their simulations were that coupling constants are largest for rotation around the z-axis. Additionally, larger constants were determined for larger correlation length, respectively contrast in elastic constants. Therefore, the effect of SRC seems negligible for short correlation lengths or small constrast which is not the case for volcaones where material constrasts are naturally high (unconsolidated ash vs. breccia/tuff).\\
+Strain rotation coupling is problematic due to its effect on moment tensor inversion. There are two possibilities to deal with this issue:
+\begin{enumerate}
+	\singlespacing
+	\item Point measurements of rotational motions (e.g. ring laser, fiber optic gyroscopes, multi-pendulums, etc):\\
+	A 3-component rotational sensor is attached to a 3-component seismometer to obtain the complete trajectory of the wave field.
+	\item Array measurements (e.g. seismogeodetic method):\\
+	The full spatial gradient of the wave field (rotation, normal strain, shear strain) can be estimated, but only under the assumption that the rotation is linear over the array. Thus, site effects like SRC at single stations are averaged out (not measurable) if the array is large enough.
+\end{enumerate}
+\citet{Graizer2010} described the effect of rotations on translational seismograms: they change the projection of gravity onto horizontal seismometer components due to the tilt, they cause.  In the case of high strain-rotation coupling constants, we need to correct the affected seismograms for the tilt effect which is only possible via point measurements as described in (1). Therefore, in order to preserve the complete information about the moment tensor of a seismic event (cf. source mechanism), the tilt effect has to be considered.\\
+Note that different factors are crucial for the effective influence of strain induced rotations on seismograms:
+\begin{itemize}
+	\singlespacing
+	\item coupling constants
+	\item relative magnitude of strain and rotation
+	\item radiation pattern of the source
+	\item source receiver distance
+	\item seismic phases
+\end{itemize}
+
+However as mentioned above, large arrays are often not feasible at volcanoes. We want to show if source inversion on an active volcano with a smaller number of 6-C stations yield reasonable results and can confirm the improved results of previous numerical simulations. The findings shall be compared to measurements with a small array of 3-C stations in order to ascertain the influence of SRC on moment tensor inversion.
+
+Recapitulation of this section: the main source for non-uniqueness in seismic inverse problems are under-detemined velocity models for the shallow subsurface. Strain-rotation coupling (definition below) also plays a role, especially for small arrays. Numerical simulations showed that both of these issues are reduced by measuring 3-component rotational motions additional to the 3C seismometer recordings.\\
+We want to verify and utilize this principle in field measurements at the Stromboli volcano, where large arrays are hardly manageable due to topography and often not feasible for reasons of economy.\\
+In the following sections, the impact of strain-rotation coupling (SRC) and different velocity model approaches are exemplified.
+
+\section*{Moment tensor inversions on active volcanoes}
+This section deals with source inversion solutions of previous studies and shall motivate why we want/need to constrain the number of theoretical source mechanisms.\\
+
+
+
+Recently, \citet{Chouet2010} performed waveform inversion on VLP (very long period) waveforms of the 2008/2009 eruptive activity of Kilauea volcano, Hawaii. The authors considered three different classes of source mechanisms:
+\begin{enumerate}
+	\singlespacing
+	\item three single-force components only
+	\item six moment tensor components only
+	\item three single-force + six moment tensor components
+\end{enumerate} 
+Their selection of the best fitting solutions was based on minimized residual error, the relevance of free parameters used in the model (Akaike's Information Criterion) and the physical significance of the resulting mechanisms (plasubility). Eventually, they could confine the solution space to volumetric component and a vertical single force component. Nevertheless, this allowed for a wide range of different solutions especially for the volumetric component, that could be explained by various pipe and dike geometries, intersecting or dipping at multiple angles and interacting with cracks.\\
+ 
+Before \citet{Cesca2008} had similar problems with finding a unique source mechanism for long period events during the 2001 Kilauea eruptions. They especially investigated the impact of topography on the source inversion. In synthetic tests, they tested different velocity models, including layering for the caldera area and homogeneous outside. Great uncertainties were discovered for layered models that have been proposed by many authors and are associated with strogly varying thicknesses of layers. Of course the variety of models and the homogeneous velocity assumption in the surroundings respectively, contributed to increase the non-uniqueness in their subsequent 3D-modeling.
+
+Velocity model can improve depth estimate of source as well.
+$\rightarrow$ again point to importance of finding source mechanisms to understand eruptions 
+ 
+
+
+Etna: \citet{Cannata2009, DeBarros2011}\\
+Stromboli: \citet{Chouet1997, Chouet2003, Auger2006}\\
+Kilauea: \citet{Cesca2008} (viscous drag, single force)\\
+
+$\rightarrow$ How well-constrained are their velocity models?
+
+
+\section*{Approaches}
+\citet{Maeda2011, vanDriel2012} showed recently that the tilt effect (SRC) caused by near source observations at active volcanoes can be computed in advance. Thus, it is possible to estimate the true source mechanism when using corresponding tilt-including Green's function.
+To overcome this problem \citet{Bernauer2014} proposed a probabilistic source inversion approach which also includes additional information of 6C recordings (3 components of translation and 3 components of rotation). Testing millions of scenarios and adding rotational ground motion data to their numerical simulations, they could reduce the non-uniqueness of their subsurface velocity models. That works because additional rotation data allows to infer gradients of the wave field at depth which greatly contributes to finding a well-defined ground velocity model. In that context, they refer to the seismogeodetic method \citep{Spudich1995, Spudich2008} to infer array derived rotations (ADR).\\
+On the other hand, they motivate the utilization of rotational point measurements (e.g. fiber-optic gyroscopes) and combine them with 3-component broadband accelerometers to 6-C sensors. In their simulations, the precise, point-wise measurement of rotations allowed for a sustantially better reduction of the non-uniqueness of seismic inverse problems compared to the averaged measurements via ADR. Moreover, less 6-C sensors were needed to obtain reasonable or better results than with many 3-C stations.\\
+\section*{Volcanic wave fields \& synthetics}
+Synthetic tests: How do rotational signals of magma rising in a cylindrical dyke look like? (Bernauer paper?)\\
+Can we see anything with rotational measurements?\\
+
+why are volcanic wavefields contamined with SH-waves so much?\\
+- crack-opening?\\
+- bi-material (hard-soft)?
+$\Rightarrow$ any literature suggestions?
+
+$\rightarrow$ Our goal in this part is to check with synthetic and real measurements if the 6C-sensors yield advantages and allow for constraints, therefore help to determine physical mechanisms in the source region of volcanic microseismicity. 
+
+
+
+\label{Bibliography}
+\begin{singlespace*}
+\small{
+\bibliography{Bibliography}
+\bibliographystyle{my_bib2} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+}
+\end{singlespace*}
+
+
+
+\end{document}
